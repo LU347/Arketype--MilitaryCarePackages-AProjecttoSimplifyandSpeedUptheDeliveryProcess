@@ -8,22 +8,10 @@ Blue Star Mothers chapters actively support military personnel and their familie
 
 However, the substantial manual effort involved in these processes limits their capacity, leading to infrequent packing parties, with at most two occurrences per year.
 
-## Creator
-@Krutarth Thakkar (Krutarth) (on Slack)
+## Our Solution
+To solve this problem,  we have formed a system which helpd take all the necessary information from the members and their requests to help generate a form automatically without almost no manual work!
 
-## Your next steps
-1. ✅ Add everyone to your GitHub repo like this: https://opportunity-hack.slack.com/archives/C1Q6YHXQU/p1605657678139600
-2. ✅ Create your DevPost project like this https://youtu.be/vCa7QFFthfU?si=bzMQ91d8j3ZkOD03
-3. ✅ ASU Students use https://opportunity-hack-2023-asu.devpost.com/
-4. ✅ Everyone else use https://opportunity-hack-2023-virtual.devpost.com/
-5. ✅ Your DevPost final submission demo video should be 3 minutes or less
-6. ✅ Review the judging criteria on DevPost
+Through the implementation of this automation, we will optimize the packaging process to the extent that it nears instantaneous completion, substantially diminishing the requirement for manual labor within Blue Star Mothers of America Inc. 
 
-# What should your final Readme look like?
-Examples of stellar readmes:
-- ✨ [2019 Team 3](https://github.com/2019-Arizona-Opportunity-Hack/Team-3)
-- ✨ [2019 Team 6](https://github.com/2019-Arizona-Opportunity-Hack/Team-6)
-- ✨ [2020 Team 2](https://github.com/2020-opportunity-hack/Team-02)
-- ✨ [2020 Team 4](https://github.com/2020-opportunity-hack/Team-04)
-- ✨ [2020 Team 8](https://github.com/2020-opportunity-hack/Team-08)
-- ✨ [2020 Team 12](https://github.com/2020-opportunity-hack/Team-12)
+Consequently, the organization will now have the capacity to expedite the delivery of more packages in less time while relieving workers of excessive manual input.
+
