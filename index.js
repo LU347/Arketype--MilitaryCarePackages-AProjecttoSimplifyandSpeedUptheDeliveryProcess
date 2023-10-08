@@ -3,17 +3,24 @@ const app = express()
 const port = 3000
 const path = require('path'); // Import the 'path' module
 const bodyParser = require('body-parser');
+const { SendEmail, generate7CharacterOTP } = require('./emailhandler'); // Import the functions from your 'email.js' module
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); // Parse JSON requests
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    const htmlFilePath = path.join(__dirname, 'index.html');
+    const htmlFilePath = path.join(__dirname, 'login.html');
     res.sendFile(htmlFilePath);
 })
 
-app.get('/locationtracking', (req, res) => {
-    res.send('Yes it works!')
+app.get('/shipping', (req, res) => {
+  const htmlFilePath = path.join(__dirname, 'shipping.html');
+  res.sendFile(htmlFilePath);
+})
+
+app.get('/home/:OTP', (req, res) => {
+    res.redirect("/shipping")
 })
 
 app.listen(port, () => {
@@ -21,16 +28,21 @@ app.listen(port, () => {
 })
 
 app.post('/submit-form', (req, res) => {
-  const name = req.body.name;
-    console.log(name)
-    console.log(req.body)
-  const age = req.body.age;
-    console.log(age)
-    
 
-  // Do something with the form data
-  // ...
 
-  res.send('Form data submitted successfully!');
+  const email = req.body.email;
+  console.log(email);
+
+  // Generate a 7-character OTP
+  const otp = generate7CharacterOTP();
+
+  // Send an email with the OTP
+  SendEmail(email, otp);
+
+  res.send('Check your (' + email + ') inbox for the magic link.');
 });
 
+app.post('/shipping/submit', (req, res) => {
+  console.log(req.body);
+  res.send('Form data submitted successfully!');
+});

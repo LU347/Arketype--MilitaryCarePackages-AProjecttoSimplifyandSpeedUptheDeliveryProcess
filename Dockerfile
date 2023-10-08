@@ -1,5 +1,5 @@
 # From the base image node
-FROM node:8.11-slim
+FROM node:18.18.0-slim
 WORKDIR /usr/src/app
 
 # Copy all the files from your file system to the container file system
