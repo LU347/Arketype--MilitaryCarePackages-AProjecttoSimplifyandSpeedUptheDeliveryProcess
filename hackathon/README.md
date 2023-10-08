@@ -1,13 +1,12 @@
 
-# 2023_fall Hackathon
-https://hack.ohack.dev
-## Team
-Arketype
+# Team Arketype
 
+## Inspiration
 The Blue Star Mothers of America is a national nonprofit organization that provides support and assistance to active-duty service members, veterans, and their families. 
 
-## Problem Statement
-[Military Care Packages: A Project to Simplify and Speed Up the Delivery Process](https://ohack.dev/project/Ng1joCkd2fSiOwAVmEOW)
+Blue Star Mothers chapters actively support military personnel and their families through initiatives like sending care packages to deployed troops, community outreach programs, and advocacy for veterans' issues.
+
+However, the substantial manual effort involved in these processes limits their capacity, leading to infrequent packing parties, with at most two occurrences per year.
 
 ## Creator
 @Krutarth Thakkar (Krutarth) (on Slack)
