@@ -4,7 +4,8 @@ const port = 3000
 const path = require('path'); // Import the 'path' module
 const bodyParser = require('body-parser');
 const { SendEmail, generate7CharacterOTP } = require('./emailhandler'); // Import the functions from your 'email.js' module
-
+const Parser=require('@json2csv/plainjs');
+let converter = require('json-2-csv');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +43,10 @@ app.post('/submit-form', (req, res) => {
   res.send('Check your (' + email + ') inbox for the magic link.');
 });
 
-app.post('/shipping/submit', (req, res) => {
+app.post('/shipping/submit', async (req, res) => {
   console.log(req.body);
-  res.send('Form data submitted successfully!');
+
+  
+  const csv = await converter.json2csv(req.body);
+  res.send(csv);
 });

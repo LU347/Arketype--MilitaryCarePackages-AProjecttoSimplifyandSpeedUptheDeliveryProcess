@@ -1,11 +1,11 @@
 function SendEmail(email, OTP) {
-  const API_KEY = '021f92cdeae33ffdf0801bb1ff1f55d7-77316142-868c0691';
-  const DOMAIN = 'sandbox2db555245e844769aaa12ee8cfd8793b.mailgun.org';
+  const API_KEY = '96efc37ca1c9c45620b4c763b152608d-77316142-178e09b0';
+  const DOMAIN = 'sandbox416e5f8a024a4e6397078943867412d4.mailgun.org';
 
   const MAILGUN_API_URL = `https://api.mailgun.net/v3/${DOMAIN}/messages`;
 
   const formData = {
-    from: 'Excited User <mailgun@sandbox2db555245e844769aaa12ee8cfd8793b.mailgun.org>',
+    from: 'Excited User <mailgun@sandbox416e5f8a024a4e6397078943867412d4.mailgun.org>',
     to: [email],
     subject: 'Hello',
     text: "Hello here's the magic link: http://localhost:3000/home/"+ OTP,
