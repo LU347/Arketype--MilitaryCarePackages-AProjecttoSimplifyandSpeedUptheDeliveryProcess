@@ -5,7 +5,25 @@ const path = require('path'); // Import the 'path' module
 const bodyParser = require('body-parser');
 const { SendEmail, generate7CharacterOTP } = require('./emailhandler'); // Import the functions from your 'email.js' module
 const Parser=require('@json2csv/plainjs');
+
+const { MongoClient } = require('mongodb');
+
+// Replace with your MongoDB connection URL
+const uri = 'mongodb+srv://dmisno1note:dmisno1note@cluster0.fn23i5h.mongodb.net/';
+
+// Create a MongoClient instance
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Connect to MongoDB
+client.connect()
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch(err => {
+        console.error('Error connecting to MongoDB:', err);
+    });
 let converter = require('json-2-csv');
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -29,8 +47,6 @@ app.listen(port, () => {
 })
 
 app.post('/submit-form', (req, res) => {
-
-
   const email = req.body.email;
   console.log(email);
 
@@ -44,9 +60,40 @@ app.post('/submit-form', (req, res) => {
 });
 
 app.post('/shipping/submit', async (req, res) => {
-  console.log(req.body);
+  const jsonData = req.body;
+  console.log(jsonData);
+  
+  const collectionName = 'Requests';
 
+  console.log("json collected");
+
+  const db = client.db();
+
+  // Get a reference to the collection
+  const collection = db.collection(collectionName);
+
+  console.log("Entering data into DB!");
+  // Insert the JSON data into the collection
+  const result = await collection.insertOne(jsonData)
+    // console.log("DB Call commencing")
+    //   if (err) {
+    //       console.error('Error inserting data into MongoDB:', err);
+    //   } else {
+    //       console.log('Data inserted successfully:', result.insertedCount);
+    //   }
+
+      // Close the MongoDB connection
+      console.log(result);
+  // });
   
   const csv = await converter.json2csv(req.body);
-  res.send(csv);
+  res.redirect(`/view/${JSON.stringify(jsonData)}/${csv}`);
 });
+
+
+// Get a reference to the database
+
+app.get('/view/:json/:csv', (req, res) => {
+  const htmlFilePath = path.join(__dirname, 'view.html');
+  res.sendFile(htmlFilePath);
+})
