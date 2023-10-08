@@ -4,8 +4,7 @@ https://hack.ohack.dev
 ## Team
 Arketype
 
-## Slack Channel
-`#`[arketype](https://opportunity-hack.slack.com/app_redirect?channel=arketype)
+The Blue Star Mothers of America is a national nonprofit organization that provides support and assistance to active-duty service members, veterans, and their families. 
 
 ## Problem Statement
 [Military Care Packages: A Project to Simplify and Speed Up the Delivery Process](https://ohack.dev/project/Ng1joCkd2fSiOwAVmEOW)
