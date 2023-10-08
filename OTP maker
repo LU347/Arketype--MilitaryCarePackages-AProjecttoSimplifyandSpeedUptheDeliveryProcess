@@ -1,0 +1,20 @@
+const crypto = require('crypto');
+
+function generateOTP(length) {
+  const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Including letters
+  let otp = '';
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    otp += chars[randomIndex];
+  }
+
+  return otp;
+}
+
+function generate7CharacterOTP() {
+  return generateOTP(7);
+}
+
+const otp = generate7CharacterOTP();
+console.log('Generated OTP:', otp);
