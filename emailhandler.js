@@ -1,17 +1,17 @@
 function SendEmail(email, OTP) {
-  const API_KEY = '96efc37ca1c9c45620b4c763b152608d-77316142-178e09b0';
-  const DOMAIN = 'sandbox416e5f8a024a4e6397078943867412d4.mailgun.org';
+    const API_KEY = '801d7773382f50a499ce5809df55bc0e-77316142-c8ea8b35';
+    const DOMAIN = 'sandbox7284bc7a37514f5886d1e35462cfe1ba.mailgun.org';
 
   const MAILGUN_API_URL = `https://api.mailgun.net/v3/${DOMAIN}/messages`;
 
   const formData = {
-    from: 'Excited User <mailgun@sandbox416e5f8a024a4e6397078943867412d4.mailgun.org>',
+      from: 'Excited User <mailgun@sandbox7284bc7a37514f5886d1e35462cfe1ba.mailgun.org>',
     to: [email],
     subject: 'Hello',
     text: "Hello here's the magic link: http://localhost:3000/home/"+ OTP,
   };
 
-  const auth = 'Basic ' + Buffer.from(`api:${API_KEY}`).toString('base64');
+    const auth = 'Basic ' + Buffer.from(`api:${API_KEY}`).toString('base64');
 
   fetch(MAILGUN_API_URL, {
     method: 'POST',
